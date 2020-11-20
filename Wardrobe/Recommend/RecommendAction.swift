@@ -6,16 +6,31 @@
 //
 
 import Foundation
-enum AppAction {
-    case input(AppInputAction)
-//    case collect(CollectAction)
-    case recommend(AppRecommendAction)
-}
 
 enum AppRecommendAction {
-    
+    case beginSelectSuit
+    case recommendSuitViewAppear
+    case recommendSuitViewDisappear
 }
 
 extension Store {
-//    func dispatchRecommendAction
+    func reduce(state: AppState, action: AppRecommendAction) -> (AppState, AppCommand?) {
+        var state = state
+        var command: AppCommand?
+        switch action {
+        case .beginSelectSuit:
+            state.recommend.showSelectSuitType = true
+            do {
+                let suit = try state.generateASuit()
+                state.recommend.recommendSuit = suit
+            } catch {
+                state.recommend.recommendSuitError = error as? GenerateSuitError
+            }
+        case .recommendSuitViewAppear:
+            state.recommend.recommendSuitShown = true
+        case .recommendSuitViewDisappear:
+            state.recommend.recommendSuitShown = false
+        }
+        return (state, command)
+    }
 }

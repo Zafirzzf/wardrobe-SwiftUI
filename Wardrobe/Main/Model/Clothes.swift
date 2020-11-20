@@ -20,6 +20,16 @@ extension WearType {
             case woolenCoat // 呢子大衣
             case downJacket // 羽绒服
             
+            // 可以作为里衬
+            var canBeLining: Bool {
+                switch self {
+                case .tShirt, .shirt, .sweater:
+                    return true
+                case .jacket, .woolenCoat, .downJacket:
+                    return false
+                }
+            }
+            
             var text: String {
                 switch self {
                 case .tShirt: return .tShirt

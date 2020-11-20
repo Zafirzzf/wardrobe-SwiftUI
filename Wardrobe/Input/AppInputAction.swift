@@ -19,13 +19,7 @@ enum AppInputAction {
 
 extension Store {
     
-    func dispatch(_ action: AppInputAction) {
-        let result = reduce(state: state, action: action)
-        self.state = result.0
-        result.1?.execute(in: self)
-    }
-    
-    private func reduce(state: AppState, action: AppInputAction) -> (AppState, AppCommand?) {
+    func reduce(state: AppState, action: AppInputAction) -> (AppState, AppCommand?) {
         var state = state
         var command: AppCommand?
         switch action {
@@ -54,17 +48,17 @@ extension Store {
             let imageData = state.inputNew.wearImage?.jpegData(compressionQuality: 1) ?? Data()
             switch state.inputNew.wearType! {
             case .clothes:
-                state.collect.clothes.append(
+                state.clothes.clothes.append(
                     WearType.Clothes(color: color, kind: .init(kind: state.inputNew.detailWearKind!),
                                      imageData: imageData)
                 )
             case .pants:
-                state.collect.pants.append(
+                state.clothes.pants.append(
                     WearType.Pants(color: color, kind: .init(kind: state.inputNew.detailWearKind!),
                                    imageData: imageData)
                 )
             case .shoes:
-                state.collect.shoes.append(
+                state.clothes.shoes.append(
                     WearType.Shoes(color: color, kind: .init(kind: state.inputNew.detailWearKind!),
                                    imageData: imageData)
                 )
@@ -82,7 +76,7 @@ extension Store {
 private struct SelectWearTypeAnimationCommand: AppCommand {
     func execute(in store: Store) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-            store.dispatch(.selectWearAnimationFinish)
+            store.dispatch(.input(.selectWearAnimationFinish))
         }
     }
     

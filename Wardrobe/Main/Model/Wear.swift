@@ -14,6 +14,12 @@ protocol Wear {
     var imageData: Data { get }
 }
 
+extension Wear {
+    var image: Image {
+        Image(uiImage: UIImage(data: imageData) ?? UIImage(systemName: "multiply")!)
+    }
+}
+
 enum WearType {
     case clothes
     case pants

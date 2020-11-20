@@ -10,12 +10,12 @@ import SwiftUI
 struct CollectRootView: View {
     @EnvironmentObject var store: Store
     
-    private var state: AppState.Collect {
-        store.state.collect
+    private var state: AppState.ClothesCollect {
+        store.state.clothes
     }
     
-    private var stateBinding: Binding<AppState.Collect> {
-        $store.state.collect
+    private var stateBinding: Binding<AppState.ClothesCollect> {
+        $store.state.clothes
     }
     
     var body: some View {

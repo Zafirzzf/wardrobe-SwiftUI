@@ -12,6 +12,7 @@ struct WeatherResults: Decodable {
 }
 
 struct Weather: Decodable {
+    typealias TemperatureRange = (Int, Int)
     struct Location: Decodable {
         let name: String
     }
@@ -26,5 +27,13 @@ struct Weather: Decodable {
     
     var tomorrow: Detail? {
         daily.first
+    }
+    
+    var temperatureRange: TemperatureRange? {
+        if let tomorrow = tomorrow {
+            return (Int(tomorrow.low)!, Int(tomorrow.high)!)
+        } else {
+            return nil
+        }
     }
 }

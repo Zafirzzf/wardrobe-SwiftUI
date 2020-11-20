@@ -66,7 +66,7 @@ struct InputNewView: View {
                 .scaledToFit()
                 .padding(EdgeInsets(top: 15, leading: 20, bottom: 15, trailing: 15))
                 .onTapGesture {
-                    store.dispatch(.clickBack)
+                    store.dispatch(.input(.clickBack))
                 }
             Divider().frame(width: 1, height: 30)
             
@@ -77,7 +77,7 @@ struct InputNewView: View {
                     .colorMultiply(state.color)
                     .padding(.trailing, 20)
                     .onTapGesture {
-                        store.dispatch(.clickFinish)
+                        store.dispatch(.input(.clickFinish))
                     }
             }
         }
@@ -91,14 +91,14 @@ struct InputNewView: View {
                 .resizable()
                 .modifier(IconItemModifer())
                 .onTapGesture {
-                    store.dispatch(.selectUploadImageType(type: .library))
+                    store.dispatch(.input(.selectUploadImageType(type: .library)))
                 }
             Spacer()
             Image(systemName: "camera")
                 .resizable()
                 .modifier(IconItemModifer())
                 .onTapGesture {
-                    store.dispatch(.selectUploadImageType(type: .camera))
+                    store.dispatch(.input(.selectUploadImageType(type: .camera)))
                 }
             Spacer()
         }
@@ -112,7 +112,7 @@ struct InputNewView: View {
                 .cornerRadius(10)
                 .padding()
                 .onTapGesture {
-                    store.dispatch(.clickWearImage)
+                    store.dispatch(.input(.clickWearImage))
                 }
         }
     }
@@ -154,7 +154,7 @@ extension InputNewView {
             .isHidden(wearTypeItemViewHidden(of: type), remove: true)
             .onTapGesture {
                 withAnimation(.easeInOut(duration: 0.5)) {
-                    store.dispatch(.selectWearType(type: type))
+                    store.dispatch(.input(.selectWearType(type: type)))
                 }
             }
         
@@ -207,7 +207,7 @@ extension InputNewView {
                 borderColorWidth: (Color.white, 0), backgroundColor: state.color
             )
             .onTapGesture {
-                store.dispatch(.selectDetailWearKind(kind: kind))
+                store.dispatch(.input(.selectDetailWearKind(kind: kind)))
             }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 extension AppState {
-    struct Collect {
+    struct ClothesCollect {
         @WearStorage(wearType: .clothes)
         var clothes: [WearType.Clothes]
         
@@ -20,6 +20,10 @@ extension AppState {
         
         var allEmpty: Bool {
             clothes.isEmpty && pants.isEmpty && shoes.isEmpty
+        }
+        
+        var canNotBeSuit: Bool {
+            clothes.isEmpty || pants.isEmpty || shoes.isEmpty
         }
     }
 }

@@ -14,4 +14,8 @@ struct WeatherState {
     var noLocationPermission = false
     var weather: Weather? = Weather(location: .init(name: "海淀区"), daily: [.init(text_day: "多云", high: "39", low: "-9", wind_scale: "a")])
     
+    var temperatureRange: Weather.TemperatureRange? {
+        return weather?.temperatureRange
+    }
+    
 }

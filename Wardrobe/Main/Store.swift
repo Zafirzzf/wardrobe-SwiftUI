@@ -19,26 +19,32 @@ class Store: ObservableObject {
         
     }
     
-    func dispatch(_ action: AppTabAction) {
+    func dispatch(_ action: AppAction) {
         let result = reduce(state: state, action: action)
         self.state = result.0
         result.1?.execute(in: self)
     }
 }
 
+enum AppAction {
+    case mainTab(AppTabAction)
+    case recommend(AppRecommendAction)
+    case input(AppInputAction)
+//    case collect(CollectAction)
+}
+
 // MARK -- Reducer
 extension Store {
-    private func reduce(state: AppState, action: AppTabAction) -> (AppState, AppCommand?) {
-        var state = state
-        var command: AppCommand?
+    private func reduce(state: AppState, action: AppAction) -> (AppState, AppCommand?) {
         switch action {
-        case .selectTabIndex(let index):
-            state.mainTab.selectIndex = index
-        case .clickInputToAddButton:
-            state.mainTab.showInputModal = true
-            state.inputNew = AppState.InputNew()
+        case .input(let inputAction):
+            return reduce(state: state, action: inputAction)
+        case .recommend(let recommendAction):
+            return reduce(state: state, action: recommendAction)
+        case .mainTab(let mainTabAction):
+            return reduce(state: state, action: mainTabAction)
         }
-        return (state, command)
+        
     }
 }
 

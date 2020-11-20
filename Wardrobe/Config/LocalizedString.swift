@@ -30,6 +30,9 @@ extension String {
     static var clothes: StringType { "衣服" }
     static var pants: StringType { "裤子" }
     static var shoes: StringType { "鞋子" }
+    static var clothesNotEnough: StringType { "衣服添加不足，无法凑成一套" }
+    static var weatherDataError: StringType { "天气信息获取失败，无法推荐" }
+    static var clothesTypeNotEnough: StringType { "衣服种类添加不足，里衬和外套都要有" }
 }
 
 extension LocalizedStringKey {
@@ -40,6 +43,11 @@ extension LocalizedStringKey {
     static var finish: LocalizedStringKey { "完成" }
     static var tomorrow: LocalizedStringKey { "明天" }
     static var wardrobeEmptyTip: LocalizedStringKey { "衣柜空空如也~" }
+    static var tomorrowWearWhat: LocalizedStringKey { "明天穿什么?" }
+    static var tomorrowWearThis: LocalizedStringKey { "明天穿这些" }
+    static var reselect: LocalizedStringKey { "重新选择" }
+    static var manualSelect: LocalizedStringKey { "手动搭配" }
+    
 
     static func weatherInfo(high: String, low: String) -> LocalizedStringKey {
         return "最高\(high)° 最低\(low)°"

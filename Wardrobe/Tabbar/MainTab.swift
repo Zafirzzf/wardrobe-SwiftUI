@@ -45,7 +45,7 @@ struct MainTab: View {
     
     var addButton: some View {
         Button(action: {
-            store.dispatch(.clickInputToAddButton)
+            store.dispatch(.mainTab(.clickInputToAddButton))
         }, label: {
             Image(systemName: "plus.circle.fill")
                 .resizable()
@@ -67,7 +67,7 @@ struct MainTab: View {
         }
         .frame(width: 100, height: 50)
         .onTapGesture {
-            store.dispatch(.selectTabIndex(index: index))
+            store.dispatch(.mainTab(.selectTabIndex(index: index)))
         }
     }
     
