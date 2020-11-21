@@ -52,6 +52,7 @@
 		18F13BE62567BEA9000A7B75 /* AppTabAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F13BE42567BEA9000A7B75 /* AppTabAction.swift */; };
 		18F13BE72567BEA9000A7B75 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F13BE52567BEA9000A7B75 /* MainTab.swift */; };
 		18F13BEB2567BEC8000A7B75 /* State-MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F13BEA2567BEC8000A7B75 /* State-MainTab.swift */; };
+		18F13C002569236B000A7B75 /* ManualSelSuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F13BFF2569236B000A7B75 /* ManualSelSuitView.swift */; };
 		92A904BF8B1128D6B30CD622 /* Pods_WardrobeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA80A01B57AB621262238C46 /* Pods_WardrobeTests.framework */; };
 		9A39FA187952D9EC1AAF0FE6 /* Pods_Wardrobe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA97E254E1F04B41ACF7EE7E /* Pods_Wardrobe.framework */; };
 /* End PBXBuildFile section */
@@ -118,6 +119,7 @@
 		18F13BE42567BEA9000A7B75 /* AppTabAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabAction.swift; sourceTree = "<group>"; };
 		18F13BE52567BEA9000A7B75 /* MainTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		18F13BEA2567BEC8000A7B75 /* State-MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State-MainTab.swift"; sourceTree = "<group>"; };
+		18F13BFF2569236B000A7B75 /* ManualSelSuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSelSuitView.swift; sourceTree = "<group>"; };
 		9216E6BB5E52F83116D9C005 /* Pods-Wardrobe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wardrobe.release.xcconfig"; path = "Target Support Files/Pods-Wardrobe/Pods-Wardrobe.release.xcconfig"; sourceTree = "<group>"; };
 		B6AEF68033095B84B94F70B8 /* Pods-Wardrobe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wardrobe.debug.xcconfig"; path = "Target Support Files/Pods-Wardrobe/Pods-Wardrobe.debug.xcconfig"; sourceTree = "<group>"; };
 		BA97E254E1F04B41ACF7EE7E /* Pods_Wardrobe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wardrobe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				1874DF142563759B00CB4D41 /* RecommendListView.swift */,
+				18F13BFF2569236B000A7B75 /* ManualSelSuitView.swift */,
 				18F13BD0256767E0000A7B75 /* State-Recommend.swift */,
 				18F13BD425676805000A7B75 /* RecommendAction.swift */,
 			);
@@ -564,6 +567,7 @@
 				1874DF402563759C00CB4D41 /* Wear.swift in Sources */,
 				1874DF4E2563759C00CB4D41 /* Request.swift in Sources */,
 				1874DF392563759C00CB4D41 /* AppCommand.swift in Sources */,
+				18F13C002569236B000A7B75 /* ManualSelSuitView.swift in Sources */,
 				1876BDAC256507B500AAE373 /* Weather.swift in Sources */,
 				1874DF442563759C00CB4D41 /* RecommendListView.swift in Sources */,
 				1874DF4F2563759C00CB4D41 /* RequestError.swift in Sources */,

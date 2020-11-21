@@ -9,13 +9,13 @@ import Foundation
 
 extension AppState {
     struct ClothesCollect {
-        @WearStorage(wearType: .clothes)
+        @WearStorage(key: .clothes, defaultValue: [])
         var clothes: [WearType.Clothes]
         
-        @WearStorage(wearType: .pants)
+        @WearStorage(key: .pants, defaultValue: [])
         var pants: [WearType.Pants]
         
-        @WearStorage(wearType: .shoes)
+        @WearStorage(key: .shoes, defaultValue: [])
         var shoes: [WearType.Shoes]
         
         var allEmpty: Bool {

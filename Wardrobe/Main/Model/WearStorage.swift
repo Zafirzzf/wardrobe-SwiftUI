@@ -9,26 +9,34 @@ import Foundation
 
 @propertyWrapper
 struct WearStorage<Value: Codable> {
-    
-    var values: [Value] = []
-    var wrappedValue: [Value] {
+    typealias Key = String
+    var wrappedValue: Value {
         get {
-            values
+            value
         }
         set {
-            values = newValue
+            value = newValue
             if let encodeData = try? JSONEncoder().encode(newValue) {
-                UserDefaults.standard.setValue(encodeData, forKey: wearType.viewModel.text)
+                UserDefaults.standard.setValue(encodeData, forKey: key)
             } else {
-                UserDefaults.standard.removeObject(forKey: wearType.viewModel.text)
+                UserDefaults.standard.removeObject(forKey: key)
             }
         }
     }
-    private let wearType: WearType
+    private let key: Key
+    private var value: Value
     
-    init(wearType: WearType) {
-        self.wearType = wearType
-        self.values = (UserDefaults.standard.object(forKey: wearType.viewModel.text) as? Data)
-            .flatMap { try? JSONDecoder().decode([Value].self, from: $0) } ?? []
+    init(key: Key, defaultValue: Value) {
+        self.key = key
+        self.value = (UserDefaults.standard.object(forKey: key) as? Data)
+            .flatMap { try? JSONDecoder().decode(Value.self, from: $0) } ?? defaultValue
+    }
+}
+
+extension WearStorage where Value: ExpressibleByNilLiteral {
+    init(key: Key) {
+        self.key = key
+        self.value = (UserDefaults.standard.object(forKey: key) as? Data)
+            .flatMap { try? JSONDecoder().decode(Value.self, from: $0) } ?? nil
     }
 }

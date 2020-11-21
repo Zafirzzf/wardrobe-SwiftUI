@@ -21,10 +21,10 @@ extension AppState {
         if clothes.canNotBeSuit {
             throw GenerateSuitError.clothesNotEnough
         } else {
-            guard let range = weather.temperatureRange else {
+            guard weather.weather != nil else {
                 throw GenerateSuitError.weatherDataError
             }
-            let needLining = range.0 < 5 // 温度低于5度就需要里衬
+            let needLining = weather.needLiningClothes
             let clothesTypeEnough = clothes.clothes.contains { $0.kind.canBeLining } && clothes.clothes.contains { !$0.kind.canBeLining }
             if needLining, !clothesTypeEnough {
                 // 如果温度需要里衬但是没有外套和里衬

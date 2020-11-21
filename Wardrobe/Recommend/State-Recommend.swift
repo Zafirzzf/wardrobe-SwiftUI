@@ -13,16 +13,34 @@ extension AppState {
             case auto
             case manual
         }
-        var selectSuit: WearSuit?
+        
+        @WearStorage(key: "tomorrowSuit")
+        var tomorrowSuit: WearSuit?
         
         var showSelectSuitType = false
-        var recommendSuitError: GenerateSuitError?
-        var recommendSuit: WearSuit?
-        var recommendSuitShown = false
+        
+        struct SuitGenerate {
+            // 套装生成Sheet
+            var recommendSuitError: GenerateSuitError?
+            var recommendSuit: WearSuit?
+            var recommendSuitSetFinish = false
+            
+            var hasRecommendSuit: Bool {
+                recommendSuit != nil
+            }
+        }
+        var suitGenerate = SuitGenerate()
+        
+        struct ManualSelSuit {
+            var lining: WearType.Clothes?
+            var clothes: WearType.Clothes?
+            var pants: WearType.Pants?
+            var shoes: WearType.Shoes?
+        }
     }
 }
 
-struct WearSuit {
+struct WearSuit: Codable {
     let clothes: WearType.Clothes
     let pants: WearType.Pants
     let shoes: WearType.Shoes

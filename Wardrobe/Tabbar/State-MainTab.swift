@@ -26,6 +26,7 @@ extension AppState {
             @ViewBuilder var content: some View {
                 if self == .recommend {
                     RecommendListView()
+                        .navigationTitle(.recommend)
                 } else {
                     CollectRootView()
                         .navigationTitle(.collect)

@@ -18,4 +18,10 @@ struct WeatherState {
         return weather?.temperatureRange
     }
     
+    var needLiningClothes: Bool {
+        temperatureRange.map {
+            $0.0 < 5 // 温度低于5度就需要里衬
+        } ?? false
+    }
+    
 }

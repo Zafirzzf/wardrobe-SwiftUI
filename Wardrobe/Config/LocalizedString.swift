@@ -46,8 +46,10 @@ extension LocalizedStringKey {
     static var tomorrowWearWhat: LocalizedStringKey { "明天穿什么?" }
     static var tomorrowWearThis: LocalizedStringKey { "明天穿这些" }
     static var reselect: LocalizedStringKey { "重新选择" }
+    static var reRecommend: LocalizedStringKey { "重新推荐" }
     static var manualSelect: LocalizedStringKey { "手动搭配" }
-    
+    static var thisSuitBingo: LocalizedStringKey { "就这身了!" }
+    static var gotoSelect: LocalizedStringKey { "去选择" }
 
     static func weatherInfo(high: String, low: String) -> LocalizedStringKey {
         return "最高\(high)° 最低\(low)°"
