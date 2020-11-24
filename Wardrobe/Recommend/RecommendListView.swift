@@ -63,9 +63,7 @@ struct RecommendListView: View {
                 suit.shoes.image
                     .resizable()
                     .scaledToFill()
-            } else {
-                Image("demoClothes.JPG")
-            }
+            } 
         }
     }
     

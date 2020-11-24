@@ -47,6 +47,10 @@
 		1876BDB0256507D300AAE373 /* State-Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876BDAF256507D300AAE373 /* State-Weather.swift */; };
 		1876BDB6256507F400AAE373 /* WeatherAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876BDB5256507F400AAE373 /* WeatherAction.swift */; };
 		1876BDBC25650A4A00AAE373 /* WeatherLoadCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876BDBB25650A4A00AAE373 /* WeatherLoadCommand.swift */; };
+		189870EA256BC2590064A1A4 /* CommonTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189870E9256BC2590064A1A4 /* CommonTypealias.swift */; };
+		18CB602A256B63030008AAC4 /* CommonWearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB6029256B63030008AAC4 /* CommonWearListView.swift */; };
+		18CB6036256B9F830008AAC4 /* State-WearList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB6035256B9F830008AAC4 /* State-WearList.swift */; };
+		18CB603A256BA00D0008AAC4 /* CollectAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB6039256BA00D0008AAC4 /* CollectAction.swift */; };
 		18F13BD1256767E1000A7B75 /* State-Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F13BD0256767E0000A7B75 /* State-Recommend.swift */; };
 		18F13BD525676805000A7B75 /* RecommendAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F13BD425676805000A7B75 /* RecommendAction.swift */; };
 		18F13BE62567BEA9000A7B75 /* AppTabAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F13BE42567BEA9000A7B75 /* AppTabAction.swift */; };
@@ -114,6 +118,11 @@
 		1876BDAF256507D300AAE373 /* State-Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State-Weather.swift"; sourceTree = "<group>"; };
 		1876BDB5256507F400AAE373 /* WeatherAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAction.swift; sourceTree = "<group>"; };
 		1876BDBB25650A4A00AAE373 /* WeatherLoadCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLoadCommand.swift; sourceTree = "<group>"; };
+		189870E9256BC2590064A1A4 /* CommonTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTypealias.swift; sourceTree = "<group>"; };
+		18CB6024256B5D580008AAC4 /* Wardrobe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wardrobe.entitlements; sourceTree = "<group>"; };
+		18CB6029256B63030008AAC4 /* CommonWearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWearListView.swift; sourceTree = "<group>"; };
+		18CB6035256B9F830008AAC4 /* State-WearList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State-WearList.swift"; sourceTree = "<group>"; };
+		18CB6039256BA00D0008AAC4 /* CollectAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectAction.swift; sourceTree = "<group>"; };
 		18F13BD0256767E0000A7B75 /* State-Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State-Recommend.swift"; sourceTree = "<group>"; };
 		18F13BD425676805000A7B75 /* RecommendAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendAction.swift; sourceTree = "<group>"; };
 		18F13BE42567BEA9000A7B75 /* AppTabAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabAction.swift; sourceTree = "<group>"; };
@@ -170,6 +179,7 @@
 		1874DED32563755500CB4D41 /* Wardrobe */ = {
 			isa = PBXGroup;
 			children = (
+				18CB6024256B5D580008AAC4 /* Wardrobe.entitlements */,
 				1874DF222563759C00CB4D41 /* Base */,
 				1874DF052563759B00CB4D41 /* Main */,
 				18F13BE32567BEA9000A7B75 /* Tabbar */,
@@ -262,7 +272,10 @@
 			isa = PBXGroup;
 			children = (
 				1874DF202563759C00CB4D41 /* CollectRootView.swift */,
+				18CB6039256BA00D0008AAC4 /* CollectAction.swift */,
 				1874DF212563759C00CB4D41 /* State-Collect.swift */,
+				18CB6035256B9F830008AAC4 /* State-WearList.swift */,
+				18CB6029256B63030008AAC4 /* CommonWearListView.swift */,
 			);
 			path = Collect;
 			sourceTree = "<group>";
@@ -322,6 +335,7 @@
 				1874DF332563759C00CB4D41 /* Localizable.strings */,
 				1874DF362563759C00CB4D41 /* LocalizedString.swift */,
 				1874DF372563759C00CB4D41 /* ColorConfig.swift */,
+				189870E9256BC2590064A1A4 /* CommonTypealias.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -542,7 +556,9 @@
 				1874DF3A2563759C00CB4D41 /* WardrobeApp.swift in Sources */,
 				1876BDB0256507D300AAE373 /* State-Weather.swift in Sources */,
 				1874DF5A2563759C00CB4D41 /* LocalizedString.swift in Sources */,
+				18CB6036256B9F830008AAC4 /* State-WearList.swift in Sources */,
 				1876BDB6256507F400AAE373 /* WeatherAction.swift in Sources */,
+				18CB603A256BA00D0008AAC4 /* CollectAction.swift in Sources */,
 				18F13BE62567BEA9000A7B75 /* AppTabAction.swift in Sources */,
 				1874DF492563759C00CB4D41 /* InputNewView.swift in Sources */,
 				1874DF3E2563759C00CB4D41 /* Clothes.swift in Sources */,
@@ -558,12 +574,14 @@
 				1874DF4A2563759C00CB4D41 /* AppInputAction.swift in Sources */,
 				1876BDBC25650A4A00AAE373 /* WeatherLoadCommand.swift in Sources */,
 				1874DF572563759C00CB4D41 /* ImageLibraryPicker.swift in Sources */,
+				189870EA256BC2590064A1A4 /* CommonTypealias.swift in Sources */,
 				1874DF3F2563759C00CB4D41 /* Pants.swift in Sources */,
 				1874DF412563759C00CB4D41 /* DetailWearKind.swift in Sources */,
 				18F13BE72567BEA9000A7B75 /* MainTab.swift in Sources */,
 				1874DF422563759C00CB4D41 /* Store.swift in Sources */,
 				18F13BEB2567BEC8000A7B75 /* State-MainTab.swift in Sources */,
 				1874DF512563759C00CB4D41 /* View+modifier.swift in Sources */,
+				18CB602A256B63030008AAC4 /* CommonWearListView.swift in Sources */,
 				1874DF402563759C00CB4D41 /* Wear.swift in Sources */,
 				1874DF4E2563759C00CB4D41 /* Request.swift in Sources */,
 				1874DF392563759C00CB4D41 /* AppCommand.swift in Sources */,
@@ -735,20 +753,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Wardrobe/Wardrobe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Wardrobe/Preview Content\"";
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Wardrobe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zafir.Wardrobe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -758,20 +779,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Wardrobe/Wardrobe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Wardrobe/Preview Content\"";
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Wardrobe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zafir.Wardrobe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};

@@ -30,7 +30,7 @@ enum AppAction {
     case mainTab(AppTabAction)
     case recommend(AppRecommendAction)
     case input(AppInputAction)
-//    case collect(CollectAction)
+    case collect(CollectAction)
 }
 
 // MARK -- Reducer
@@ -43,6 +43,8 @@ extension Store {
             return reduce(state: state, action: recommendAction)
         case .mainTab(let mainTabAction):
             return reduce(state: state, action: mainTabAction)
+        case .collect(let collectAction):
+            return reduce(state: state, action: collectAction)
         }
         
     }

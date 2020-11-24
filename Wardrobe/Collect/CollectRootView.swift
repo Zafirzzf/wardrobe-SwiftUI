@@ -22,15 +22,31 @@ struct CollectRootView: View {
         if state.allEmpty {
             emptyTipView
         } else {
-            ScrollView {
-                VStack {
-                    getSection(of: .clothes)
-                    Divider()
-                    getSection(of: .pants)
-                    Divider()
-                    getSection(of: .shoes)
-                }
+            List([
+                getListRowData(of: .clothes),
+                getListRowData(of: .pants),
+                getListRowData(of: .shoes)
+            ], id: \.title) { rowData in
+                NavigationLink(
+                    destination: CommonWearListView(wears: rowData.wears, tapWearAction: { wear in
+                        store.dispatch(.collect(.tapDetailWear(wear)))
+                    }, title: rowData.title),
+                    label: {
+                        getSectionView(of: rowData)
+                    })
             }
+
+        }
+    }
+    
+    private func getListRowData(of wearType: WearType) -> CollectListRowData {
+        switch wearType {
+        case .clothes:
+            return .init(wearType: wearType, wears: state.clothes)
+        case .pants:
+            return .init(wearType: wearType, wears: state.pants)
+        case .shoes:
+            return .init(wearType: wearType, wears: state.shoes)
         }
     }
     
@@ -45,24 +61,16 @@ struct CollectRootView: View {
         }
         .foregroundColor(.mGray)
     }
+
     
-    private func datas(of wearType: WearType) -> [Wear] {
-        switch wearType {
-        case .clothes: return state.clothes
-        case .pants: return state.pants
-        case .shoes: return state.shoes
-        }
-    }
-    
-    private func getSection(of wearType: WearType) -> some View {
+    private func getSectionView(of rowData: CollectListRowData) -> some View {
         
         VStack(alignment: .leading) {
-            Text(wearType.viewModel.text + "(\(datas(of: wearType).count)件)")
+            Text(rowData.title + "(\(rowData.wears.count)件)")
                 .foregroundColor(.mGray)
-                .padding(.leading, 20)
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], content: {
-                    ForEach(datas(of: wearType), id: \.imageData) { wear in
+                    ForEach(rowData.wears, id: \.imageData) { wear in
                         wearItemView(of: wear)
                     }
                 })
@@ -83,8 +91,16 @@ struct CollectRootView: View {
     }
 }
 
+private struct CollectListRowData {
+    let wearType: WearType
+    var title: String {
+        wearType.viewModel.text
+    }
+    let wears: [Wear]
+}
+
 struct CollectRootView_Previews: PreviewProvider {
     static var previews: some View {
-        CollectRootView().environmentObject(Store())
+        CollectRootView().previewDevice("iPhone 12 mini").environmentObject(Store())
     }
 }

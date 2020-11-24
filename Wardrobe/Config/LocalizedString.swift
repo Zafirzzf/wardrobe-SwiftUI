@@ -33,6 +33,10 @@ extension String {
     static var clothesNotEnough: StringType { "衣服添加不足，无法凑成一套" }
     static var weatherDataError: StringType { "天气信息获取失败，无法推荐" }
     static var clothesTypeNotEnough: StringType { "衣服种类添加不足，里衬和外套都要有" }
+    static var reuploadImage: StringType { "重新上传图片" }
+    static var markedNeedWash: StringType { "标记为脏了" }
+    static var removeFromWardrobe: StringType { "从衣柜移除" }
+    static var howToHandleThisWear: StringType { "对此件服饰进行操作" }
 }
 
 extension LocalizedStringKey {

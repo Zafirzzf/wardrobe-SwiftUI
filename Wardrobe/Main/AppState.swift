@@ -14,6 +14,7 @@ struct AppState {
     var inputNew = InputNew()
     var clothes = ClothesCollect()
     var weather = WeatherState()
+    var wearList = WearList()
 }
 
 extension AppState {

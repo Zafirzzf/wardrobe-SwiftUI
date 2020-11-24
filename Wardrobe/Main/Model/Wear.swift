@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+let testWear: [Wear] = Array(repeating: WearType.Clothes.init(color: .red, kind: .downJacket, imageData: UIImage(systemName: "plus")!.jpegData(compressionQuality: 1)!), count: 10)
+
 protocol Wear {
     var color: Color { get }
     var text: String { get }
@@ -17,6 +19,10 @@ protocol Wear {
 extension Wear {
     var image: Image {
         Image(uiImage: UIImage(data: imageData) ?? UIImage(systemName: "multiply")!)
+    }
+    
+    func equal(with wear: Wear?) -> Bool {
+        wear?.imageData == imageData
     }
 }
 
