@@ -48,6 +48,7 @@
 		1876BDB6256507F400AAE373 /* WeatherAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876BDB5256507F400AAE373 /* WeatherAction.swift */; };
 		1876BDBC25650A4A00AAE373 /* WeatherLoadCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876BDBB25650A4A00AAE373 /* WeatherLoadCommand.swift */; };
 		189870EA256BC2590064A1A4 /* CommonTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189870E9256BC2590064A1A4 /* CommonTypealias.swift */; };
+		189870EE256CB6120064A1A4 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189870ED256CB6120064A1A4 /* Sequence+Extension.swift */; };
 		18CB602A256B63030008AAC4 /* CommonWearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB6029256B63030008AAC4 /* CommonWearListView.swift */; };
 		18CB6036256B9F830008AAC4 /* State-WearList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB6035256B9F830008AAC4 /* State-WearList.swift */; };
 		18CB603A256BA00D0008AAC4 /* CollectAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB6039256BA00D0008AAC4 /* CollectAction.swift */; };
@@ -119,6 +120,7 @@
 		1876BDB5256507F400AAE373 /* WeatherAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAction.swift; sourceTree = "<group>"; };
 		1876BDBB25650A4A00AAE373 /* WeatherLoadCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLoadCommand.swift; sourceTree = "<group>"; };
 		189870E9256BC2590064A1A4 /* CommonTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTypealias.swift; sourceTree = "<group>"; };
+		189870ED256CB6120064A1A4 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		18CB6024256B5D580008AAC4 /* Wardrobe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wardrobe.entitlements; sourceTree = "<group>"; };
 		18CB6029256B63030008AAC4 /* CommonWearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWearListView.swift; sourceTree = "<group>"; };
 		18CB6035256B9F830008AAC4 /* State-WearList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State-WearList.swift"; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				1874DF282563759C00CB4D41 /* View+modifier.swift */,
 				1874DF292563759C00CB4D41 /* Image+Extension.swift */,
 				1876BD9C2565049E00AAE373 /* SubscriptionsComplete+extension.swift */,
+				189870ED256CB6120064A1A4 /* Sequence+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			files = (
 				1874DF4B2563759C00CB4D41 /* State-Input.swift in Sources */,
 				1874DF3A2563759C00CB4D41 /* WardrobeApp.swift in Sources */,
+				189870EE256CB6120064A1A4 /* Sequence+Extension.swift in Sources */,
 				1876BDB0256507D300AAE373 /* State-Weather.swift in Sources */,
 				1874DF5A2563759C00CB4D41 /* LocalizedString.swift in Sources */,
 				18CB6036256B9F830008AAC4 /* State-WearList.swift in Sources */,

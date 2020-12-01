@@ -26,7 +26,7 @@ extension Wear {
     }
 }
 
-enum WearType {
+enum WearType: CaseIterable {
     case clothes
     case pants
     case shoes

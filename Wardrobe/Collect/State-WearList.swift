@@ -10,14 +10,9 @@ import SwiftUI
 
 extension AppState {
     struct WearList {
+        var wears: [Wear] = []
         var currentTapedWear: Wear?
-        var actionSheetData: ActionSheetData? {
-            didSet {
-                if actionSheetData == nil {
-                    currentTapedWear = nil
-                }
-            }
-        }
+        var actionSheetData: ActionSheetData?
     }
 }
 

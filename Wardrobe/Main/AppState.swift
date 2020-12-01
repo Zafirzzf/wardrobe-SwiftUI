@@ -12,21 +12,21 @@ struct AppState {
     var mainTab = MainTab()
     var recommend = Recommend()
     var inputNew = InputNew()
-    var clothes = ClothesCollect()
+    var wears = WearsCollect()
     var weather = WeatherState()
     var wearList = WearList()
 }
 
 extension AppState {
     func generateASuit() throws -> WearSuit {
-        if clothes.canNotBeSuit {
+        if wears.canNotBeSuit {
             throw GenerateSuitError.clothesNotEnough
         } else {
             guard weather.weather != nil else {
                 throw GenerateSuitError.weatherDataError
             }
             let needLining = weather.needLiningClothes
-            let clothesTypeEnough = clothes.clothes.contains { $0.kind.canBeLining } && clothes.clothes.contains { !$0.kind.canBeLining }
+            let clothesTypeEnough = wears.clothes.contains { $0.kind.canBeLining } && wears.clothes.contains { !$0.kind.canBeLining }
             if needLining, !clothesTypeEnough {
                 // 如果温度需要里衬但是没有外套和里衬
                 throw GenerateSuitError.clothesTypeNotEnough
@@ -34,14 +34,14 @@ extension AppState {
             let firstClothes: WearType.Clothes
             var liningClothes: WearType.Clothes?
             if needLining {
-                firstClothes = clothes.clothes.filter { !$0.kind.canBeLining }.randomElement()!
-                liningClothes = clothes.clothes.filter { $0.kind.canBeLining }.randomElement()!
+                firstClothes = wears.clothes.filter { !$0.kind.canBeLining }.randomElement()!
+                liningClothes = wears.clothes.filter { $0.kind.canBeLining }.randomElement()!
             } else {
-                firstClothes = clothes.clothes.randomElement()!
+                firstClothes = wears.clothes.randomElement()!
             }
             return WearSuit(clothes: firstClothes,
-                     pants: clothes.pants.randomElement()!,
-                     shoes: clothes.shoes.randomElement()!, lining: liningClothes)
+                     pants: wears.pants.randomElement()!,
+                     shoes: wears.shoes.randomElement()!, lining: liningClothes)
         }
     }
 }

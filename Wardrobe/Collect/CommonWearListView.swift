@@ -19,7 +19,7 @@ struct CommonWearListView: View {
     let title: String
     
     var body: some View {
-        List(wears, id: \.imageData) { wear in
+        List(state.wears, id: \.imageData) { wear in
             wear.image
                 .resizable()
                 .scaledToFit()
@@ -36,6 +36,9 @@ struct CommonWearListView: View {
                         message: actionData.message.map(Text.init),
                         buttons: actionDataToButtons(actionData) + [.cancel()])
         }
+        .onAppear {
+            store.dispatch(.collect(.detailListShown(wears)))
+        }
     }
     
     func actionDataToButtons(_ actionData: ActionSheetData) -> [Alert.Button] {
@@ -47,10 +50,10 @@ struct CommonWearListView: View {
     }
 }
 
-struct ClothesScanListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            CommonWearListView(wears: testWear, tapWearAction: {_ in }, title: "sdds")
-        }
-    }
-}
+//struct ClothesScanListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            CommonWearListView(tapWearAction: {_ in }, title: "sdds")
+//        }
+//    }
+//}

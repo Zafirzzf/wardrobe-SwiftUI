@@ -10,12 +10,12 @@ import SwiftUI
 struct CollectRootView: View {
     @EnvironmentObject var store: Store
     
-    private var state: AppState.ClothesCollect {
-        store.state.clothes
+    private var state: AppState.WearsCollect {
+        store.state.wears
     }
     
-    private var stateBinding: Binding<AppState.ClothesCollect> {
-        $store.state.clothes
+    private var stateBinding: Binding<AppState.WearsCollect> {
+        $store.state.wears
     }
     
     var body: some View {
@@ -28,15 +28,18 @@ struct CollectRootView: View {
                 getListRowData(of: .shoes)
             ], id: \.title) { rowData in
                 NavigationLink(
-                    destination: CommonWearListView(wears: rowData.wears, tapWearAction: { wear in
-                        store.dispatch(.collect(.tapDetailWear(wear)))
-                    }, title: rowData.title),
+                    destination: detailDestinationView(rowData: rowData),
                     label: {
                         getSectionView(of: rowData)
                     })
             }
-
         }
+    }
+    
+    private func detailDestinationView(rowData: CollectListRowData) -> some View {
+        CommonWearListView(wears: rowData.wears, tapWearAction: { wear in
+            store.dispatch(.collect(.tapDetailWear(wear)))
+        }, title: rowData.title)
     }
     
     private func getListRowData(of wearType: WearType) -> CollectListRowData {
@@ -64,7 +67,6 @@ struct CollectRootView: View {
 
     
     private func getSectionView(of rowData: CollectListRowData) -> some View {
-        
         VStack(alignment: .leading) {
             Text(rowData.title + "(\(rowData.wears.count)件)")
                 .foregroundColor(.mGray)

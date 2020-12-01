@@ -48,17 +48,17 @@ extension Store {
             let imageData = state.inputNew.wearImage?.jpegData(compressionQuality: 1) ?? Data()
             switch state.inputNew.wearType! {
             case .clothes:
-                state.clothes.clothes.append(
+                state.wears.clothes.append(
                     WearType.Clothes(color: color, kind: .init(kind: state.inputNew.detailWearKind!),
                                      imageData: imageData)
                 )
             case .pants:
-                state.clothes.pants.append(
+                state.wears.pants.append(
                     WearType.Pants(color: color, kind: .init(kind: state.inputNew.detailWearKind!),
                                    imageData: imageData)
                 )
             case .shoes:
-                state.clothes.shoes.append(
+                state.wears.shoes.append(
                     WearType.Shoes(color: color, kind: .init(kind: state.inputNew.detailWearKind!),
                                    imageData: imageData)
                 )

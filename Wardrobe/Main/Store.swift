@@ -9,6 +9,8 @@ import Foundation
 import Combine
 
 class Store: ObservableObject {
+    static let shared = Store()
+    
     @Published var state = AppState()
     
     init() {
