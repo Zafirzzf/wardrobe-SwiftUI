@@ -31,18 +31,18 @@ extension AppState {
         }
         var suitGenerate = SuitGenerate()
         
-        struct ManualSelSuit {
-            var lining: WearType.Clothes?
-            var clothes: WearType.Clothes?
-            var pants: WearType.Pants?
-            var shoes: WearType.Shoes?
-        }
+//        struct ManualSelSuit {
+//            var lining: WearType.Clothes?
+//            var clothes: WearType.Clothes?
+//            var pants: WearType.Pants?
+//            var shoes: WearType.Shoes?
+//        }
     }
 }
 
 struct WearSuit: Codable {
-    let clothes: WearType.Clothes
-    let pants: WearType.Pants
-    let shoes: WearType.Shoes
-    var lining: WearType.Clothes? // 里衬
+    let clothes: Wear
+    let pants: Wear
+    let shoes: Wear
+    var lining: Wear? // 里衬
 }

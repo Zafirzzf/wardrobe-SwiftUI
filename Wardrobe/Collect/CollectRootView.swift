@@ -11,11 +11,11 @@ struct CollectRootView: View {
     @EnvironmentObject var store: Store
     
     private var state: AppState.WearsCollect {
-        store.state.wears
+        store.state.wearsState
     }
     
     private var stateBinding: Binding<AppState.WearsCollect> {
-        $store.state.wears
+        $store.state.wearsState
     }
     
     var body: some View {
@@ -86,7 +86,7 @@ struct CollectRootView: View {
             Image(uiImage: UIImage(data: wear.imageData) ?? UIImage(systemName: "multiply")!)
                 .resizable()
                 .scaledToFill()
-            Text(wear.text)
+            Text(wear.kind.text)
                 .shadow(color: .mGray, radius: 5)
         }
         .padding()

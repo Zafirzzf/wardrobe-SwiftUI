@@ -26,7 +26,7 @@ extension Store {
             
             state.wearList.actionSheetData = .init(actions: [removeFromCollect, reuploadImageAction, markedNeedWash], title: .howToHandleThisWear, message: nil)
         case .deleteSelectWear:
-            state.wears.clothes.removeFirst(where: { $0.equal(with: state.wearList.currentTapedWear) })
+//            state.wearsState.clothes.removeFirst(where: { $0.equal(with: state.wearList.currentTapedWear) })
             state.wearList.wears.removeFirst(where: { $0.equal(with: state.wearList.currentTapedWear) })
             state.wearList.currentTapedWear = nil
         case .detailListShown(let wears):

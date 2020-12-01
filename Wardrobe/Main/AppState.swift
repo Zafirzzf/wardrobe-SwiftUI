@@ -12,36 +12,36 @@ struct AppState {
     var mainTab = MainTab()
     var recommend = Recommend()
     var inputNew = InputNew()
-    var wears = WearsCollect()
+    var wearsState = WearsCollect()
     var weather = WeatherState()
     var wearList = WearList()
 }
 
 extension AppState {
     func generateASuit() throws -> WearSuit {
-        if wears.canNotBeSuit {
+        if wearsState.canNotBeSuit {
             throw GenerateSuitError.clothesNotEnough
         } else {
             guard weather.weather != nil else {
                 throw GenerateSuitError.weatherDataError
             }
             let needLining = weather.needLiningClothes
-            let clothesTypeEnough = wears.clothes.contains { $0.kind.canBeLining } && wears.clothes.contains { !$0.kind.canBeLining }
+            let clothesTypeEnough = wearsState.clothes.contains { $0.kind.canBeLining } && wearsState.clothes.contains { !$0.kind.canBeLining }
             if needLining, !clothesTypeEnough {
                 // 如果温度需要里衬但是没有外套和里衬
                 throw GenerateSuitError.clothesTypeNotEnough
             }
-            let firstClothes: WearType.Clothes
-            var liningClothes: WearType.Clothes?
+            let firstClothes: Wear
+            var liningClothes: Wear?
             if needLining {
-                firstClothes = wears.clothes.filter { !$0.kind.canBeLining }.randomElement()!
-                liningClothes = wears.clothes.filter { $0.kind.canBeLining }.randomElement()!
+                firstClothes = wearsState.clothes.filter { !$0.kind.canBeLining }.randomElement()!
+                liningClothes = wearsState.clothes.filter { $0.kind.canBeLining }.randomElement()!
             } else {
-                firstClothes = wears.clothes.randomElement()!
+                firstClothes = wearsState.clothes.randomElement()!
             }
             return WearSuit(clothes: firstClothes,
-                     pants: wears.pants.randomElement()!,
-                     shoes: wears.shoes.randomElement()!, lining: liningClothes)
+                     pants: wearsState.pants.randomElement()!,
+                     shoes: wearsState.shoes.randomElement()!, lining: liningClothes)
         }
     }
 }

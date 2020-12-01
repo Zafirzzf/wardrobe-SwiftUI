@@ -13,10 +13,7 @@
 		1874DF382563759C00CB4D41 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF062563759B00CB4D41 /* AppState.swift */; };
 		1874DF392563759C00CB4D41 /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF072563759B00CB4D41 /* AppCommand.swift */; };
 		1874DF3A2563759C00CB4D41 /* WardrobeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF082563759B00CB4D41 /* WardrobeApp.swift */; };
-		1874DF3C2563759C00CB4D41 /* Shoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF0B2563759B00CB4D41 /* Shoes.swift */; };
 		1874DF3D2563759C00CB4D41 /* WearStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF0C2563759B00CB4D41 /* WearStorage.swift */; };
-		1874DF3E2563759C00CB4D41 /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF0D2563759B00CB4D41 /* Clothes.swift */; };
-		1874DF3F2563759C00CB4D41 /* Pants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF0E2563759B00CB4D41 /* Pants.swift */; };
 		1874DF402563759C00CB4D41 /* Wear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF0F2563759B00CB4D41 /* Wear.swift */; };
 		1874DF412563759C00CB4D41 /* DetailWearKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF102563759B00CB4D41 /* DetailWearKind.swift */; };
 		1874DF422563759C00CB4D41 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874DF112563759B00CB4D41 /* Store.swift */; };
@@ -84,10 +81,7 @@
 		1874DF062563759B00CB4D41 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		1874DF072563759B00CB4D41 /* AppCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
 		1874DF082563759B00CB4D41 /* WardrobeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeApp.swift; sourceTree = "<group>"; };
-		1874DF0B2563759B00CB4D41 /* Shoes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shoes.swift; sourceTree = "<group>"; };
 		1874DF0C2563759B00CB4D41 /* WearStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WearStorage.swift; sourceTree = "<group>"; };
-		1874DF0D2563759B00CB4D41 /* Clothes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
-		1874DF0E2563759B00CB4D41 /* Pants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pants.swift; sourceTree = "<group>"; };
 		1874DF0F2563759B00CB4D41 /* Wear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wear.swift; sourceTree = "<group>"; };
 		1874DF102563759B00CB4D41 /* DetailWearKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWearKind.swift; sourceTree = "<group>"; };
 		1874DF112563759B00CB4D41 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -232,10 +226,7 @@
 		1874DF0A2563759B00CB4D41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1874DF0B2563759B00CB4D41 /* Shoes.swift */,
 				1874DF0C2563759B00CB4D41 /* WearStorage.swift */,
-				1874DF0D2563759B00CB4D41 /* Clothes.swift */,
-				1874DF0E2563759B00CB4D41 /* Pants.swift */,
 				1874DF0F2563759B00CB4D41 /* Wear.swift */,
 				1874DF102563759B00CB4D41 /* DetailWearKind.swift */,
 			);
@@ -565,21 +556,18 @@
 				18CB603A256BA00D0008AAC4 /* CollectAction.swift in Sources */,
 				18F13BE62567BEA9000A7B75 /* AppTabAction.swift in Sources */,
 				1874DF492563759C00CB4D41 /* InputNewView.swift in Sources */,
-				1874DF3E2563759C00CB4D41 /* Clothes.swift in Sources */,
 				1874DF4D2563759C00CB4D41 /* State-Collect.swift in Sources */,
 				1874DF552563759C00CB4D41 /* LocationManager.swift in Sources */,
 				1876BDAB256507B500AAE373 /* WeatherTipView.swift in Sources */,
 				18F13BD525676805000A7B75 /* RecommendAction.swift in Sources */,
 				18F13BD1256767E1000A7B75 /* State-Recommend.swift in Sources */,
 				1874DF382563759C00CB4D41 /* AppState.swift in Sources */,
-				1874DF3C2563759C00CB4D41 /* Shoes.swift in Sources */,
 				1874DF522563759C00CB4D41 /* Image+Extension.swift in Sources */,
 				1874DF502563759C00CB4D41 /* Color+Extension.swift in Sources */,
 				1874DF4A2563759C00CB4D41 /* AppInputAction.swift in Sources */,
 				1876BDBC25650A4A00AAE373 /* WeatherLoadCommand.swift in Sources */,
 				1874DF572563759C00CB4D41 /* ImageLibraryPicker.swift in Sources */,
 				189870EA256BC2590064A1A4 /* CommonTypealias.swift in Sources */,
-				1874DF3F2563759C00CB4D41 /* Pants.swift in Sources */,
 				1874DF412563759C00CB4D41 /* DetailWearKind.swift in Sources */,
 				18F13BE72567BEA9000A7B75 /* MainTab.swift in Sources */,
 				1874DF422563759C00CB4D41 /* Store.swift in Sources */,

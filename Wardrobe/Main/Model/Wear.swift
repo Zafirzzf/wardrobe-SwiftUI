@@ -8,12 +8,11 @@
 import Foundation
 import SwiftUI
 
-let testWear: [Wear] = Array(repeating: WearType.Clothes.init(color: .red, kind: .downJacket, imageData: UIImage(systemName: "plus")!.jpegData(compressionQuality: 1)!), count: 10)
-
-protocol Wear {
-    var color: Color { get }
-    var text: String { get }
-    var imageData: Data { get }
+struct Wear: Codable {
+    let color: Color
+    let imageData: Data
+    let wearType: WearType
+    let kind: DetailWearKind
 }
 
 extension Wear {
@@ -26,7 +25,7 @@ extension Wear {
     }
 }
 
-enum WearType: CaseIterable {
+enum WearType: String, Codable {
     case clothes
     case pants
     case shoes
@@ -34,11 +33,11 @@ enum WearType: CaseIterable {
     var viewModel: WearTypeViewModel {
         switch self {
         case .clothes: return .init(icon: Image("clothes"), text: .clothes,
-                                    subKinds: WearType.Clothes.Kind.allCases)
+                                    subKinds: DetailWearKind.kinds(of: .clothes))
         case .pants: return .init(icon: Image("pants"), text: .pants,
-                                  subKinds: WearType.Pants.Kind.allCases)
+                                  subKinds: DetailWearKind.kinds(of: .pants))
         case .shoes: return .init(icon: Image("shoes"), text: .shoes,
-                                  subKinds: WearType.Shoes.Kind.allCases)
+                                  subKinds: DetailWearKind.kinds(of: .shoes))
         }
     }
 }
@@ -54,7 +53,7 @@ enum WearColor {
     case blue
 }
 
-enum WearThickness {
+enum WearThickness: String, Codable {
     case thin
     case thick
 }

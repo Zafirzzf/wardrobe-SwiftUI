@@ -9,18 +9,21 @@ import Foundation
 
 extension AppState {
     struct WearsCollect {
-//        
-//        @WearStorage(key: "keys", defaultValue: [])
-//        var wears: [Wear]
         
-        @WearStorage(key: .clothes, defaultValue: [])
-        var clothes: [WearType.Clothes]
+        @WearStorage(key: "wears", defaultValue: [])
+        var wears: [Wear]
         
-        @WearStorage(key: .pants, defaultValue: [])
-        var pants: [WearType.Pants]
+        var clothes: [Wear] {
+            wears.filter { $0.wearType == .clothes }
+        }
         
-        @WearStorage(key: .shoes, defaultValue: [])
-        var shoes: [WearType.Shoes]
+        var pants: [Wear] {
+            wears.filter { $0.wearType == .pants }
+        }
+        
+        var shoes: [Wear] {
+            wears.filter { $0.wearType == .shoes }
+        }
                 
         var allEmpty: Bool {
             clothes.isEmpty && pants.isEmpty && shoes.isEmpty
