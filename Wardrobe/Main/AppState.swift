@@ -14,9 +14,9 @@ struct AppState {
     var inputNew = InputNew()
     var wearsState = WearsCollect()
     var weather = WeatherState()
-    var wearList = WearList()
+    var wearListState = WearList()
 }
-
+ 
 extension AppState {
     func generateASuit() throws -> WearSuit {
         if wearsState.canNotBeSuit {

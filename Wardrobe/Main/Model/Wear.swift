@@ -8,7 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct Wear: Codable {
+struct Wear: Codable, Equatable {
+    static func == (lhs: Wear, rhs: Wear) -> Bool {
+        lhs.imageData == rhs.imageData
+    }
+    
     let color: Color
     let imageData: Data
     let wearType: WearType

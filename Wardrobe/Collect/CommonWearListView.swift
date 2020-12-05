@@ -11,7 +11,7 @@ struct CommonWearListView: View {
     @EnvironmentObject var store: Store
     
     var state: AppState.WearList {
-        store.state.wearList
+        store.state.wearListState
     }
     
     var wears: [Wear]
@@ -31,7 +31,7 @@ struct CommonWearListView: View {
         .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
         .navigationBarTitle(title)
         .navigationBarTitleDisplayMode(.inline)
-        .actionSheet(item: $store.state.wearList.actionSheetData) { actionData in
+        .actionSheet(item: $store.state.wearListState.actionSheetData) { actionData in
             ActionSheet(title: Text(actionData.title),
                         message: actionData.message.map(Text.init),
                         buttons: actionDataToButtons(actionData) + [.cancel()])

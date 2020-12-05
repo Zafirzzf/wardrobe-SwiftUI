@@ -19,18 +19,18 @@ extension Store {
         var command: AppCommand?
         switch action {
         case .tapDetailWear(let wear):
-            state.wearList.currentTapedWear = wear
+            state.wearListState.currentTapedWear = wear
             let removeFromCollect: (String, AppCommand) = (String.removeFromWardrobe, RemoveFromCollectCommand())
             let reuploadImageAction: (String, AppCommand) = (String.reuploadImage, ReuploadImageCommand())
             let markedNeedWash: (String, AppCommand) = (String.markedNeedWash, MarkedNeedWashCommand())
             
-            state.wearList.actionSheetData = .init(actions: [removeFromCollect, reuploadImageAction, markedNeedWash], title: .howToHandleThisWear, message: nil)
+            state.wearListState.actionSheetData = .init(actions: [removeFromCollect, reuploadImageAction, markedNeedWash], title: .howToHandleThisWear, message: nil)
         case .deleteSelectWear:
-//            state.wearsState.clothes.removeFirst(where: { $0.equal(with: state.wearList.currentTapedWear) })
-            state.wearList.wears.removeFirst(where: { $0.equal(with: state.wearList.currentTapedWear) })
-            state.wearList.currentTapedWear = nil
+            state.wearsState.wears.removeFirst { $0 == state.wearListState.currentTapedWear }
+            state.wearListState.wears.removeFirst { $0 == state.wearListState.currentTapedWear }
+            state.wearListState.currentTapedWear = nil
         case .detailListShown(let wears):
-            state.wearList.wears = wears
+            state.wearListState.wears = wears
         }
         return (state, command)
     }
